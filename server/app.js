@@ -1,7 +1,13 @@
 var express = require("express");
-
+const cors = require('cors');
+const bodyParser = require('body-parser');
 var TodoRouter =require("./api/todo/todo.route")
+var attendanceRoutes = require("./api/attendance/attendance.route");
+var studentRouter = require("./api/students/students.route");
+var teacherRouter = require("./api/teacher/teacher.route");
+
 var app = express();
+
 require("dotenv").config();
 
 const mongoose = require("mongoose");
@@ -15,6 +21,9 @@ mongoose
     console.log("Error in connecting Mongodb");
   });
 
+  app.use(cors());
+app.use(bodyParser.json());
+
 app.use(express.json());
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -27,6 +36,9 @@ app.use((req, res, next) => {
 });
 
 app.use("/todo",TodoRouter);
+app.use("/attendance", attendanceRoutes);
+app.use("/student", studentRouter);
+app.use("/teacher",teacherRouter);
 
 app.listen(3000, () => {
   console.log("listening on http://localhost:3000");
