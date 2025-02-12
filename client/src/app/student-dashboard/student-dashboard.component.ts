@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import jsQR from 'jsqr';
-import { environment } from '../../../environment';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-student-dashboard',

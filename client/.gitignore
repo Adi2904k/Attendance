@@ -42,3 +42,4 @@ testem.log
 Thumbs.db
 # Environment 
 client/environment.ts
+.env
