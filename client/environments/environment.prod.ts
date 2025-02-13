@@ -5,6 +5,6 @@ export const environment = {
 
 
     production: true,
-    backendBaseUrl: 'https://attendance-omega-eosin.vercel.app', // Example variable
+    backendBaseUrl: `https://attendance-omega-eosin.vercel.app/`,
    
   };
